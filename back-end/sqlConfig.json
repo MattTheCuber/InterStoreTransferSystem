@@ -1,0 +1,7 @@
+{
+  "server": "DESKTOP-13L5MPC\\SQLEXPRESS",
+  "database": "InterStoreTransferSystem",
+  "options": {
+    "trustedConnection": true
+  }
+}
