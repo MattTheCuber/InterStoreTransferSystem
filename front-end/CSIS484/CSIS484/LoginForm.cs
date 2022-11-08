@@ -17,7 +17,11 @@ namespace CSIS484
         public LoginForm()
         {
             InitializeComponent();
+
+            // For debugging
             //AllocConsole();
+            //txtStoreId.Text = "16517";
+            //txtPassword.Text = "password1";
         }
 
         // On Login Button clicked
