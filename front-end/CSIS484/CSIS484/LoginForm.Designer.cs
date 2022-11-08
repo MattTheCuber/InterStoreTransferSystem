@@ -42,7 +42,6 @@
             this.txtStoreId.Name = "txtStoreId";
             this.txtStoreId.Size = new System.Drawing.Size(136, 23);
             this.txtStoreId.TabIndex = 0;
-            this.txtStoreId.Text = "16517";
             // 
             // txtPassword
             // 
@@ -50,7 +49,6 @@
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.Size = new System.Drawing.Size(136, 23);
             this.txtPassword.TabIndex = 1;
-            this.txtPassword.Text = "password1";
             // 
             // label1
             // 

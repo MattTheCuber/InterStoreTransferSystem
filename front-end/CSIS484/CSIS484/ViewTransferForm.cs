@@ -24,6 +24,8 @@ namespace CSIS484
            
             // Set the variable
             this.transfer = transfer;
+            // Set the form name
+            Text = $"Transfer {this.transfer.getId()}";
 
             // Populate the view labels
             lblRequestingStore.Text = Convert.ToString(this.transfer.getRequestingStore());
