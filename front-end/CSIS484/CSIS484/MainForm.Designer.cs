@@ -44,6 +44,8 @@
             this.columnHeader4 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader5 = new System.Windows.Forms.ColumnHeader();
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
+            this.btnOpenOutgoingTransfer = new System.Windows.Forms.Button();
+            this.btnOpenIncomingTransfer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // outgoingRequests
@@ -104,7 +106,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(16, 313);
+            this.label2.Location = new System.Drawing.Point(11, 359);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 15);
             this.label2.TabIndex = 3;
@@ -120,7 +122,7 @@
             this.columnHeader5,
             this.columnHeader6});
             this.incomingRequests.FullRowSelect = true;
-            this.incomingRequests.Location = new System.Drawing.Point(12, 339);
+            this.incomingRequests.Location = new System.Drawing.Point(7, 385);
             this.incomingRequests.Name = "incomingRequests";
             this.incomingRequests.Size = new System.Drawing.Size(619, 265);
             this.incomingRequests.TabIndex = 2;
@@ -156,11 +158,33 @@
             // 
             this.columnHeader6.Text = "Quantity";
             // 
+            // btnOpenOutgoingTransfer
+            // 
+            this.btnOpenOutgoingTransfer.Location = new System.Drawing.Point(533, 8);
+            this.btnOpenOutgoingTransfer.Name = "btnOpenOutgoingTransfer";
+            this.btnOpenOutgoingTransfer.Size = new System.Drawing.Size(93, 23);
+            this.btnOpenOutgoingTransfer.TabIndex = 4;
+            this.btnOpenOutgoingTransfer.Text = "Open Transfer";
+            this.btnOpenOutgoingTransfer.UseVisualStyleBackColor = true;
+            this.btnOpenOutgoingTransfer.Click += new System.EventHandler(this.btnOpenOutgoingTransfer_Click);
+            // 
+            // btnOpenIncomingTransfer
+            // 
+            this.btnOpenIncomingTransfer.Location = new System.Drawing.Point(533, 351);
+            this.btnOpenIncomingTransfer.Name = "btnOpenIncomingTransfer";
+            this.btnOpenIncomingTransfer.Size = new System.Drawing.Size(93, 23);
+            this.btnOpenIncomingTransfer.TabIndex = 5;
+            this.btnOpenIncomingTransfer.Text = "Open Transfer";
+            this.btnOpenIncomingTransfer.UseVisualStyleBackColor = true;
+            this.btnOpenIncomingTransfer.Click += new System.EventHandler(this.btnOpenIncomingTransfer_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 618);
+            this.ClientSize = new System.Drawing.Size(638, 662);
+            this.Controls.Add(this.btnOpenIncomingTransfer);
+            this.Controls.Add(this.btnOpenOutgoingTransfer);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.incomingRequests);
             this.Controls.Add(this.label1);
@@ -190,5 +214,7 @@
         private ColumnHeader columnHeader4;
         private ColumnHeader columnHeader5;
         private ColumnHeader columnHeader6;
+        private Button btnOpenOutgoingTransfer;
+        private Button btnOpenIncomingTransfer;
     }
 }
