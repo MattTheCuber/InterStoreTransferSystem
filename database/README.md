@@ -1,4 +1,4 @@
-Installation Instructions:
+# Installation Instructions:
 
 1. Install Microsoft SQL Server
 2. Run the create_database.sql script

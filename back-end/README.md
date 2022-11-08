@@ -1,4 +1,4 @@
-Installation Instructions:
+# Installation Instructions:
 
 1. Download and install node.js
 2. Run > npm install
