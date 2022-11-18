@@ -1,9 +1,10 @@
 const { wrap } = require("../../utils/request");
+const sql = require("mssql/msnodesqlv8");
 
 module.exports = wrap(async function (req, res) {
   const storeId = req.query.storeId;
   // If the information is missing, return an error
-  if (!req.body.requestedStoreId || !req.body.itemId || !req.body.quantity) {
+  if (!req.query.requestedStoreId || !req.query.itemId || !req.query.quantity) {
     return res
       .status(400)
       .json({ status: 400, message: "Invalid request body" });
@@ -15,8 +16,8 @@ module.exports = wrap(async function (req, res) {
   const request = new sql.Request(pool);
 
   // Insert a transfer request
-  const query = `INSERT Transfers(OrderDateTime, RequestingStoreId, RequestedStoreId, ItemId, Quantity, TransferStatus, CompletedDateTime)
-                 VALUES (GETDATE(), ${storeId}, ${req.body.requestedStoreId}, ${req.body.itemId}, ${req.body.quantity}, 0, NULL)`;
+  const query = `INSERT INTO Transfers(OrderDateTime, RequestingStoreId, RequestedStoreId, ItemId, Quantity, TransferStatus, CompletedDateTime)
+                 VALUES (GETDATE(), ${storeId}, ${req.query.requestedStoreId}, ${req.query.itemId}, ${req.query.quantity}, 0, NULL)`;
   const result = await request.query(query);
   pool.close();
 

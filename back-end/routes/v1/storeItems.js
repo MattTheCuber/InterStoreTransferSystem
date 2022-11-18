@@ -10,7 +10,7 @@ module.exports = wrap(async function (req, res) {
   const request = new sql.Request(pool);
 
   // Query the all store with specified item
-  const query = `SELECT * FROM StoreItems WHERE ItemId = ${req.params.itemId} AND StoreId != ${storeId}`;
+  const query = `SELECT StoreId, Quantity FROM StoreItems WHERE ItemId = ${req.params.itemId} AND StoreId != ${storeId}`;
   const result = await request.query(query);
   pool.close();
 

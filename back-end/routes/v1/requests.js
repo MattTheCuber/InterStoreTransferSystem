@@ -32,7 +32,7 @@ module.exports = wrap(async function (req, res) {
   const query = `SELECT *
                  FROM Transfers
                  WHERE ${idKey} = ${storeId}
-                       AND CompletedDateTime ${statusKey} `;
+                       AND CompletedDateTime ${statusKey}`;
   const result = await request.query(query);
   pool.close();
 

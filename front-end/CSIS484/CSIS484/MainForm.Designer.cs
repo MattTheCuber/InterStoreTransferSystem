@@ -46,6 +46,10 @@
             this.columnHeader6 = new System.Windows.Forms.ColumnHeader();
             this.btnOpenOutgoingTransfer = new System.Windows.Forms.Button();
             this.btnOpenIncomingTransfer = new System.Windows.Forms.Button();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtSearch = new System.Windows.Forms.TextBox();
+            this.lvlInvalidSearch = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // outgoingRequests
@@ -58,7 +62,7 @@
             this.itemId,
             this.quantity});
             this.outgoingRequests.FullRowSelect = true;
-            this.outgoingRequests.Location = new System.Drawing.Point(12, 38);
+            this.outgoingRequests.Location = new System.Drawing.Point(12, 78);
             this.outgoingRequests.Name = "outgoingRequests";
             this.outgoingRequests.Size = new System.Drawing.Size(619, 265);
             this.outgoingRequests.TabIndex = 0;
@@ -97,7 +101,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(16, 12);
+            this.label1.Location = new System.Drawing.Point(16, 52);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 15);
             this.label1.TabIndex = 1;
@@ -106,7 +110,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(11, 359);
+            this.label2.Location = new System.Drawing.Point(11, 399);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(108, 15);
             this.label2.TabIndex = 3;
@@ -122,7 +126,7 @@
             this.columnHeader5,
             this.columnHeader6});
             this.incomingRequests.FullRowSelect = true;
-            this.incomingRequests.Location = new System.Drawing.Point(7, 385);
+            this.incomingRequests.Location = new System.Drawing.Point(7, 425);
             this.incomingRequests.Name = "incomingRequests";
             this.incomingRequests.Size = new System.Drawing.Size(619, 265);
             this.incomingRequests.TabIndex = 2;
@@ -160,7 +164,7 @@
             // 
             // btnOpenOutgoingTransfer
             // 
-            this.btnOpenOutgoingTransfer.Location = new System.Drawing.Point(533, 8);
+            this.btnOpenOutgoingTransfer.Location = new System.Drawing.Point(533, 48);
             this.btnOpenOutgoingTransfer.Name = "btnOpenOutgoingTransfer";
             this.btnOpenOutgoingTransfer.Size = new System.Drawing.Size(93, 23);
             this.btnOpenOutgoingTransfer.TabIndex = 4;
@@ -170,7 +174,7 @@
             // 
             // btnOpenIncomingTransfer
             // 
-            this.btnOpenIncomingTransfer.Location = new System.Drawing.Point(533, 351);
+            this.btnOpenIncomingTransfer.Location = new System.Drawing.Point(533, 391);
             this.btnOpenIncomingTransfer.Name = "btnOpenIncomingTransfer";
             this.btnOpenIncomingTransfer.Size = new System.Drawing.Size(93, 23);
             this.btnOpenIncomingTransfer.TabIndex = 5;
@@ -178,11 +182,56 @@
             this.btnOpenIncomingTransfer.UseVisualStyleBackColor = true;
             this.btnOpenIncomingTransfer.Click += new System.EventHandler(this.btnOpenIncomingTransfer_Click);
             // 
+            // btnSearch
+            // 
+            this.btnSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSearch.Location = new System.Drawing.Point(250, 13);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(155, 30);
+            this.btnSearch.TabIndex = 6;
+            this.btnSearch.Text = "Search";
+            this.btnSearch.UseVisualStyleBackColor = true;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.txtSearch.Location = new System.Drawing.Point(16, 13);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(228, 29);
+            this.txtSearch.TabIndex = 7;
+            // 
+            // lvlInvalidSearch
+            // 
+            this.lvlInvalidSearch.AutoSize = true;
+            this.lvlInvalidSearch.ForeColor = System.Drawing.Color.Red;
+            this.lvlInvalidSearch.Location = new System.Drawing.Point(411, 21);
+            this.lvlInvalidSearch.Name = "lvlInvalidSearch";
+            this.lvlInvalidSearch.Size = new System.Drawing.Size(69, 15);
+            this.lvlInvalidSearch.TabIndex = 8;
+            this.lvlInvalidSearch.Text = "Invalid Item";
+            this.lvlInvalidSearch.Visible = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnRefresh.Location = new System.Drawing.Point(268, 358);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(115, 53);
+            this.btnRefresh.TabIndex = 9;
+            this.btnRefresh.Text = "Refresh";
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(638, 662);
+            this.ClientSize = new System.Drawing.Size(638, 698);
+            this.Controls.Add(this.btnRefresh);
+            this.Controls.Add(this.lvlInvalidSearch);
+            this.Controls.Add(this.txtSearch);
+            this.Controls.Add(this.btnSearch);
             this.Controls.Add(this.btnOpenIncomingTransfer);
             this.Controls.Add(this.btnOpenOutgoingTransfer);
             this.Controls.Add(this.label2);
@@ -216,5 +265,9 @@
         private ColumnHeader columnHeader6;
         private Button btnOpenOutgoingTransfer;
         private Button btnOpenIncomingTransfer;
+        private Button btnSearch;
+        private TextBox txtSearch;
+        private Label lvlInvalidSearch;
+        private Button btnRefresh;
     }
 }

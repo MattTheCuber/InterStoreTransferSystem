@@ -47,6 +47,7 @@
             this.lblQuantity = new System.Windows.Forms.Label();
             this.lblStatus = new System.Windows.Forms.Label();
             this.btnClose = new System.Windows.Forms.Button();
+            this.btnUpdateTransfer = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -134,7 +135,7 @@
             // pbStatus
             // 
             this.pbStatus.Location = new System.Drawing.Point(12, 285);
-            this.pbStatus.Maximum = 4;
+            this.pbStatus.Maximum = 3;
             this.pbStatus.Name = "pbStatus";
             this.pbStatus.Size = new System.Drawing.Size(224, 23);
             this.pbStatus.TabIndex = 9;
@@ -213,19 +214,33 @@
             // 
             // btnClose
             // 
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnClose.Location = new System.Drawing.Point(161, 327);
             this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(75, 23);
+            this.btnClose.Size = new System.Drawing.Size(75, 33);
             this.btnClose.TabIndex = 18;
             this.btnClose.Text = "Close";
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
             // 
+            // btnUpdateTransfer
+            // 
+            this.btnUpdateTransfer.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnUpdateTransfer.Location = new System.Drawing.Point(12, 327);
+            this.btnUpdateTransfer.Name = "btnUpdateTransfer";
+            this.btnUpdateTransfer.Size = new System.Drawing.Size(130, 33);
+            this.btnUpdateTransfer.TabIndex = 19;
+            this.btnUpdateTransfer.Text = "Update Transfer";
+            this.btnUpdateTransfer.UseVisualStyleBackColor = true;
+            this.btnUpdateTransfer.Visible = false;
+            this.btnUpdateTransfer.Click += new System.EventHandler(this.btnUpdateTransfer_Click);
+            // 
             // ViewTransferForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(246, 362);
+            this.ClientSize = new System.Drawing.Size(246, 372);
+            this.Controls.Add(this.btnUpdateTransfer);
             this.Controls.Add(this.btnClose);
             this.Controls.Add(this.lblStatus);
             this.Controls.Add(this.lblQuantity);
@@ -273,5 +288,6 @@
         private Label lblQuantity;
         private Label lblStatus;
         private Button btnClose;
+        private Button btnUpdateTransfer;
     }
 }

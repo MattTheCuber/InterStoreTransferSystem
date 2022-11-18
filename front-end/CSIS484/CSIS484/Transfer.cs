@@ -76,5 +76,20 @@ namespace CSIS484
         {
             return completedDateTime;
         }
+
+        // Sets the status
+        public void setStatusValue(int newStatus)
+        {
+            // Sets the status value and string
+            this.statusValue = newStatus;
+            this.status = STATUS[newStatus];
+
+            // If the new status is completed
+            if (newStatus == 3 || newStatus == 4)
+            {
+                // Set the completed date to now
+                this.completedDateTime = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+            }
+        }
     }
 }
