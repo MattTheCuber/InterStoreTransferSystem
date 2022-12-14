@@ -39,7 +39,7 @@ namespace CSIS484
             completedDateTime = (string)transferData["CompletedDateTime"];
         }
 
-        // Public getters
+        // Public getters and setters
         public int getId()
         {
             return id;

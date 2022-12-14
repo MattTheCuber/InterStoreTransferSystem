@@ -38,14 +38,14 @@
             // 
             // txtStoreId
             // 
-            this.txtStoreId.Location = new System.Drawing.Point(96, 34);
+            this.txtStoreId.Location = new System.Drawing.Point(110, 32);
             this.txtStoreId.Name = "txtStoreId";
             this.txtStoreId.Size = new System.Drawing.Size(136, 23);
             this.txtStoreId.TabIndex = 0;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(96, 71);
+            this.txtPassword.Location = new System.Drawing.Point(110, 69);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '•';
             this.txtPassword.Size = new System.Drawing.Size(136, 23);
@@ -54,7 +54,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 37);
+            this.label1.Location = new System.Drawing.Point(57, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(47, 15);
             this.label1.TabIndex = 2;
@@ -63,7 +63,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(33, 74);
+            this.label2.Location = new System.Drawing.Point(47, 72);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 15);
             this.label2.TabIndex = 3;
@@ -71,7 +71,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(96, 126);
+            this.btnLogin.Location = new System.Drawing.Point(110, 124);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 4;
@@ -83,7 +83,7 @@
             // 
             this.txtIncorrectLogin.AutoSize = true;
             this.txtIncorrectLogin.ForeColor = System.Drawing.Color.Red;
-            this.txtIncorrectLogin.Location = new System.Drawing.Point(145, 97);
+            this.txtIncorrectLogin.Location = new System.Drawing.Point(159, 95);
             this.txtIncorrectLogin.Name = "txtIncorrectLogin";
             this.txtIncorrectLogin.Size = new System.Drawing.Size(87, 15);
             this.txtIncorrectLogin.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(278, 170);
+            this.ClientSize = new System.Drawing.Size(298, 170);
             this.Controls.Add(this.txtIncorrectLogin);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.label2);

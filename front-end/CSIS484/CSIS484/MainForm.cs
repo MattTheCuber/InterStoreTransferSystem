@@ -22,24 +22,39 @@ namespace CSIS484
         // Init variables
         string storeId;
         string encryptedPassword;
+        bool history = false;
         Transfer[] outgoing;
         Transfer[] incoming;
 
-        // Main form takes in request credentials
-        public MainForm(string storeId, string encryptedPassword)
+        // Main form takes in request credentials and whether are not to show history
+        public MainForm(string storeId, string encryptedPassword, bool history = false)
         {
             InitializeComponent();
 
             // For debugging
-            //txtSearch.Text = "50002";
+            txtSearch.Text = "50002";
 
-            // Set the form name
-            Text = $"Inter-Store Transfer System: {storeId}";
             // Store the credentials
             this.storeId = storeId;
             this.encryptedPassword = encryptedPassword;
 
-            // Load the active transfer
+            this.history = history;
+            if (history)
+            {
+                // Set the form name
+                Text = $"Inter-Store Transfer System: {storeId} | Request History";
+                // Set the button name to Close rather than History
+                btnHistory.Text = "Close";
+                // Remove the search item area and shrink the form size
+                flpContainer.Controls.Remove(flpSearch);
+                this.Height = 804 - 56;
+            } else
+            {
+                // Set the form name
+                Text = $"Inter-Store Transfer System: {storeId} | Active Requests";
+            }
+
+            // Load the transfers
             refresh();
         }
 
@@ -130,7 +145,7 @@ namespace CSIS484
                 // Create and show a transfer form
                 ViewTransferForm transferForm = new ViewTransferForm(storeId, encryptedPassword, transfer, true);
                 transferForm.ShowDialog();
-                // Refresh the active transfers
+                // Refresh the transfers
                 refresh();
             }
         }
@@ -149,7 +164,7 @@ namespace CSIS484
                 // Create and show a transfer form
                 ViewTransferForm transferForm = new ViewTransferForm(storeId, encryptedPassword, transfer, false);
                 transferForm.ShowDialog();
-                // Refresh the active transfers
+                // Refresh the transfers
                 refresh();
             }
         }
@@ -237,28 +252,46 @@ namespace CSIS484
                 CreateTransfer createTransfer = new CreateTransfer(storeId, encryptedPassword, itemId, itemName, res);
                 // Show the dialog and pause this form until that form is closed
                 createTransfer.ShowDialog();
-                // Refresh the active transfers
+                // Refresh the transfers
                 refresh();
             }
         }
 
-        // Refreshes the active request views
+        // Refreshes the request views
         private void refresh()
         {
             // Get the outgoing requests and populate the view
-            outgoing = getRequests("outgoing", "active");
+            outgoing = getRequests("outgoing", history ? "history" : "active");
             populateTransfers(outgoing, outgoingRequests);
 
             // Get the incoming requests and populate the view
-            incoming = getRequests("incoming", "active");
+            incoming = getRequests("incoming", history ? "history" : "active");
             populateTransfers(incoming, incomingRequests);
         }
 
         // On refresh button clicked
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-            // Refresh the active transfer
+            // Refresh the transfer
             refresh();
+        }
+
+        // On history button clicked
+        private void btnHistory_Click(object sender, EventArgs e)
+        {
+            // If we are in the history form
+            if (history)
+            {
+                // Close the window to go back to the main view
+                this.Close();
+            }
+            else
+            {
+                // Else create a new main form for history
+                MainForm main = new MainForm(storeId, encryptedPassword, true);
+                // Show the window and wait for it to close
+                main.ShowDialog();
+            }
         }
     }
 }

@@ -20,12 +20,6 @@ namespace CSIS484
 
             // For debugging
             //AllocConsole();
-
-            //txtStoreId.Text = "16517";
-            //txtPassword.Text = "password1";
-
-            //txtStoreId.Text = "85075";
-            //txtPassword.Text = "password3";
         }
 
         // On Login Button clicked
